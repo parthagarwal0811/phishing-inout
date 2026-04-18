@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Awareness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2 class="sr-only">Phishing awareness training dashboard</h2>
+
+<div class="wrap">
+
+  <div class="hero">
+    <img class="hero-img" src="https://www.fastmail.com/assets/images/sanebox-newphishing-bloghero2-4x-iYZYQM6Hj0-749.png" alt="">
+    <div class="hero-overlay">
+      <h1>Your inbox is a battlefield.<br>Spot the lies before they strike.</h1>
+      <button class="hero-btn">Start simulation</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Scenario library</div>
+    <div class="scroll-row">
+      <div class="card card-land">
+        <img src="https://images.mediadirhub.com/vibe/email-preview-showing-fake-invoice-from-finance-department-with-urgent-language.png" alt="">
+        <div class="card-inner">
+          <div class="card-title">Corporate email spoof</div>
+          <div class="card-desc">Fake invoice from finance department</div>
+        </div>
+      </div>
+      <div class="card card-land">
+        <img src="https://images.mediadirhub.com/vibe/email-with-subject-line-urgent-benefits-policy-update-required-and-suspicious-link.png" alt="">
+        <div class="card-inner">
+          <div class="card-title">HR policy scam</div>
+          <div class="card-desc">Urgent update to benefits policy required</div>
+        </div>
+      </div>
+      <div class="card card-land">
+        <img src="https://images.mediadirhub.com/vibe/email-appearing-to-be-from-it-helpdesk-asking-to-reset-password-via-link.png" alt="">
+        <div class="card-inner">
+          <div class="card-title">IT support phishing</div>
+          <div class="card-desc">Password reset link from IT helpdesk</div>
+        </div>
+      </div>
+      <div class="card card-land">
+        <img src="https://images.mediadirhub.com/vibe/email-from-fake-supplier-with-altered-bank-account-details-and-invoice-attachment.png" alt="">
+        <div class="card-inner">
+          <div class="card-title">Vendor invoice fraud</div>
+          <div class="card-desc">New payment details from supplier</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col section">
+    <div>
+      <div class="section-label">Role-based threat profiles</div>
+      <div class="grid2">
+        <div class="sq-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-a-briefcase-with-dollar-signs-and-warning-triangle-overlay.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">Finance team</div>
+            <div class="card-desc">Invoice fraud simulations</div>
+          </div>
+        </div>
+        <div class="sq-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-a-clipboard-with-people-icons-and-shield-icon.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">HR staff</div>
+            <div class="card-desc">Policy scam tactics</div>
+          </div>
+        </div>
+        <div class="sq-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-a-handshake-with-email-symbol-and-exclamation-mark.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">Sales rep</div>
+            <div class="card-desc">Hackers posing as fake clients</div>
+          </div>
+        </div>
+        <div class="sq-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-a-laptop-with-graduation-cap-and-warning-sign.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">Intern</div>
+            <div class="card-desc">System support scams</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Recent simulation history</div>
+      <div class="list-col">
+        <div class="list-item">
+          <img src="https://images.mediadirhub.com/vibe/email-with-subject-invoice-inv-8892-from-cfo.png" alt="">
+          <div>
+            <div class="list-title">Phishing test: April 12</div>
+            <div class="list-desc">Detected fake invoice from CFO</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <img src="https://images.mediadirhub.com/vibe/email-with-subject-hr-policy-update-action-required-and-red-link.png" alt="">
+          <div>
+            <div class="list-title">Phishing test: April 8</div>
+            <div class="list-desc">Suspicious HR policy link clicked</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <img src="https://images.mediadirhub.com/vibe/email-from-it-support-with-link-reset-password-fishy-app-com.png" alt="">
+          <div>
+            <div class="list-title">Phishing test: April 3</div>
+            <div class="list-desc">Fake IT password reset link</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="collapsible-header" onclick="toggle('age')">
+      <div class="section-label">Age group risk levels</div>
+      <span class="collapse-icon open" id="age-icon">&#8964;</span>
+    </div>
+    <div class="collapsible-body open" id="age-body">
+      <div class="age-grid">
+        <div class="age-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-a-silhouette-of-young-person-and-lightning-bolt.png" alt="">
+          <div class="risk-pill risk-high">High risk</div>
+          <div class="age-title">Under 25</div>
+          <div class="age-desc">High susceptibility to urgency tactics</div>
+        </div>
+        <div class="age-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-a-professional-figure-and-clock-symbol.png" alt="">
+          <div class="risk-pill risk-mod">Moderate</div>
+          <div class="age-title">25–40</div>
+          <div class="age-desc">Experienced but easily distracted</div>
+        </div>
+        <div class="age-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-a-briefcase-and-dollar-sign-with-warning-triangle.png" alt="">
+          <div class="risk-pill risk-high">High risk</div>
+          <div class="age-title">41–60</div>
+          <div class="age-desc">High risk for financial impersonation</div>
+        </div>
+        <div class="age-card">
+          <img src="https://images.mediadirhub.com/vibe/icon-of-an-elder-figure-and-crown-symbol.png" alt="">
+          <div class="risk-pill risk-high">High risk</div>
+          <div class="age-title">Over 60</div>
+          <div class="age-desc">High risk for authority impersonation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="collapsible-header" onclick="toggle('tactics')">
+      <div class="section-label">Top phishing tactics</div>
+      <span class="collapse-icon open" id="tactics-icon">&#8964;</span>
+    </div>
+    <div class="collapsible-body open" id="tactics-body">
+      <div class="scroll-row">
+        <div class="card card-port">
+          <img src="https://images.mediadirhub.com/vibe/email-with-subject-pay-now-or-access-will-be-revoked-in-red.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">Urgent deadline</div>
+            <div class="card-desc">Pay now or lose access</div>
+          </div>
+        </div>
+        <div class="card card-port">
+          <img src="https://images.mediadirhub.com/vibe/email-with-link-verify-accountfishy-appcom-and-login-form-preview.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">Fake login page</div>
+            <div class="card-desc">Click to verify your account</div>
+          </div>
+        </div>
+        <div class="card card-port">
+          <img src="https://images.mediadirhub.com/vibe/email-from-john-smith-ceo-requesting-wire-transfer-to-new-account.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">Impersonated executive</div>
+            <div class="card-desc">Email from CEO requesting wire transfer</div>
+          </div>
+        </div>
+        <div class="card card-port">
+          <img src="https://images.mediadirhub.com/vibe/email-with-attachment-named-invoicepdf-and-red-warning-icon.png" alt="">
+          <div class="card-inner">
+            <div class="card-title">Malicious attachment</div>
+            <div class="card-desc">Invoice.pdf contains hidden malware</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggle(id) {
+    const body = document.getElementById(id + '-body');
+    const icon = document.getElementById(id + '-icon');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    icon.classList.toggle('open', !isOpen);
+  }
+</script>
+
+</body>
+</html>
