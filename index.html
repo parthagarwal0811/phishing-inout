@@ -3,23 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phishing Awareness</title>
+  <title>PhishGuard — Dashboard</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h2 class="sr-only">Phishing awareness training dashboard</h2>
+<h2 class="sr-only">PhishGuard — phishing awareness training dashboard</h2>
 
 <div class="wrap">
 
+  <!-- Hero -->
   <div class="hero">
     <img class="hero-img" src="https://www.fastmail.com/assets/images/sanebox-newphishing-bloghero2-4x-iYZYQM6Hj0-749.png" alt="">
     <div class="hero-overlay">
-      <h1>Your inbox is a battlefield.<br>Spot the lies before they strike.</h1>
-      <button class="hero-btn">Start simulation</button>
+      <div>
+        <h1>Your inbox is a battlefield.<br>Spot the lies before they strike.</h1>
+        <p class="hero-sub">Role-adaptive phishing simulations that get harder as you improve.</p>
+      </div>
+      <a href="simulation.html" class="hero-btn">Start simulation</a>
     </div>
   </div>
 
+  <!-- Live stats bar (populated from localStorage) -->
+  <div class="stats-bar" id="stats-bar" style="display:none">
+    <div class="stats-bar-inner">
+      <div class="stat-chip">
+        <span class="chip-label">Sessions</span>
+        <span class="chip-value" id="stat-sessions">0</span>
+      </div>
+      <div class="stat-chip">
+        <span class="chip-label">Accuracy</span>
+        <span class="chip-value" id="stat-accuracy">—</span>
+      </div>
+      <div class="stat-chip">
+        <span class="chip-label">Current level</span>
+        <span class="chip-value" id="stat-level">Easy</span>
+      </div>
+      <div class="stat-chip">
+        <span class="chip-label">Win streak</span>
+        <span class="chip-value" id="stat-streak">0</span>
+      </div>
+      <a href="simulation.html" class="chip-cta">Continue training →</a>
+    </div>
+  </div>
+
+  <!-- Scenario library -->
   <div class="section">
     <div class="section-label">Scenario library</div>
     <div class="scroll-row">
@@ -44,7 +72,6 @@
           <div class="card-desc">Urgent approval required for fake claim</div>
         </div>
       </div>
-      
       <div class="card card-land">
         <img src="https://images.mediadirhub.com/vibe/email-with-subject-line-urgent-benefits-policy-update-required-and-suspicious-link.png" alt="">
         <div class="card-inner">
@@ -73,7 +100,6 @@
           <div class="card-desc">Password reset link from IT helpdesk</div>
         </div>
       </div>
-      
       <div class="card card-land">
         <img src="https://images.mediadirhub.com/vibe/email-from-fake-supplier-with-altered-bank-account-details-and-invoice-attachment.png" alt="">
         <div class="card-inner">
@@ -81,71 +107,70 @@
           <div class="card-desc">New payment details from supplier</div>
         </div>
       </div>
+      <div class="card card-land">
+        <img src="https://images.mediadirhub.com/vibe/email-from-fake-supplier-with-altered-bank-account-details-and-invoice-attachment.png" alt="">
+        <div class="card-inner">
+          <div class="card-title">MFA reset hijack</div>
+          <div class="card-desc">Fake Microsoft 365 admin requesting MFA reset</div>
+        </div>
+      </div>
+      <div class="card card-land">
+        <img src="https://images.mediadirhub.com/vibe/email-preview-showing-fake-invoice-from-finance-department-with-urgent-language.png" alt="">
+        <div class="card-inner">
+          <div class="card-title">Gift card scam</div>
+          <div class="card-desc">CEO impersonation requesting gift card purchase</div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Role + History -->
   <div class="two-col section">
     <div>
       <div class="section-label">Role-based threat profiles</div>
       <div class="grid2">
-        <div class="sq-card">
+        <a href="simulation.html" class="sq-card sq-card-link">
           <img src="https://images.mediadirhub.com/vibe/icon-of-a-briefcase-with-dollar-signs-and-warning-triangle-overlay.png" alt="">
           <div class="card-inner">
             <div class="card-title">Finance team</div>
             <div class="card-desc">Invoice fraud simulations</div>
           </div>
-        </div>
-        <div class="sq-card">
+        </a>
+        <a href="simulation.html" class="sq-card sq-card-link">
           <img src="https://images.mediadirhub.com/vibe/icon-of-a-clipboard-with-people-icons-and-shield-icon.png" alt="">
           <div class="card-inner">
             <div class="card-title">HR staff</div>
             <div class="card-desc">Policy scam tactics</div>
           </div>
-        </div>
-        <div class="sq-card">
+        </a>
+        <a href="simulation.html" class="sq-card sq-card-link">
           <img src="https://images.mediadirhub.com/vibe/icon-of-a-handshake-with-email-symbol-and-exclamation-mark.png" alt="">
           <div class="card-inner">
             <div class="card-title">Sales rep</div>
             <div class="card-desc">Hackers posing as fake clients</div>
           </div>
-        </div>
-        <div class="sq-card">
+        </a>
+        <a href="simulation.html" class="sq-card sq-card-link">
           <img src="https://images.mediadirhub.com/vibe/icon-of-a-laptop-with-graduation-cap-and-warning-sign.png" alt="">
           <div class="card-inner">
             <div class="card-title">Intern</div>
             <div class="card-desc">System support scams</div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
     <div>
       <div class="section-label">Recent simulation history</div>
-      <div class="list-col">
-        <div class="list-item">
-          <img src="https://images.mediadirhub.com/vibe/email-with-subject-invoice-inv-8892-from-cfo.png" alt="">
-          <div>
-            <div class="list-title">Phishing test: April 12</div>
-            <div class="list-desc">Detected fake invoice from CFO</div>
-          </div>
-        </div>
-        <div class="list-item">
-          <img src="https://images.mediadirhub.com/vibe/email-with-subject-hr-policy-update-action-required-and-red-link.png" alt="">
-          <div>
-            <div class="list-title">Phishing test: April 8</div>
-            <div class="list-desc">Suspicious HR policy link clicked</div>
-          </div>
-        </div>
-        <div class="list-item">
-          <img src="https://images.mediadirhub.com/vibe/email-from-it-support-with-link-reset-password-fishy-app-com.png" alt="">
-          <div>
-            <div class="list-title">Phishing test: April 3</div>
-            <div class="list-desc">Fake IT password reset link</div>
-          </div>
+      <div class="list-col" id="history-list">
+        <!-- Populated by JS from localStorage, falls back to placeholder -->
+        <div class="list-item list-placeholder">
+          <div class="list-placeholder-text">Complete your first simulation to see history here.</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Age group risk -->
   <div class="section">
     <div class="collapsible-header" onclick="toggle('age')">
       <div class="section-label">Age group risk levels</div>
@@ -181,6 +206,7 @@
     </div>
   </div>
 
+  <!-- Top tactics -->
   <div class="section">
     <div class="collapsible-header" onclick="toggle('tactics')">
       <div class="section-label">Top phishing tactics</div>
@@ -230,6 +256,55 @@
     body.classList.toggle('open', !isOpen);
     icon.classList.toggle('open', !isOpen);
   }
+
+  function loadDashboardStats() {
+    try {
+      const raw = localStorage.getItem('phishing_user_profile');
+      if (!raw) return;
+      const profile = JSON.parse(raw);
+      if (!profile || profile.sessionCount === 0) return;
+
+      const accuracy = profile.totalAnswered > 0
+        ? Math.round((profile.totalCorrect / profile.totalAnswered) * 100) + '%'
+        : '—';
+
+      const levelMap = { 1: 'Easy', 2: 'Medium', 3: 'Hard' };
+
+      // Streak
+      let streak = 0;
+      const h = profile.history || [];
+      for (let i = h.length - 1; i >= 0; i--) {
+        if (h[i].score / h[i].total >= 0.7) streak++;
+        else break;
+      }
+
+      document.getElementById('stat-sessions').textContent = profile.sessionCount;
+      document.getElementById('stat-accuracy').textContent = accuracy;
+      document.getElementById('stat-level').textContent = levelMap[profile.difficultyLevel] || 'Easy';
+      document.getElementById('stat-streak').textContent = streak;
+      document.getElementById('stats-bar').style.display = 'block';
+
+      // History list
+      if (h.length > 0) {
+        const historyEl = document.getElementById('history-list');
+        historyEl.innerHTML = h.slice(-3).reverse().map(s => `
+          <div class="list-item">
+            <div class="list-history-badge ${s.score / s.total >= 0.7 ? 'badge-pass' : 'badge-fail'}">
+              ${s.score}/${s.total}
+            </div>
+            <div>
+              <div class="list-title">Session ${s.session} — ${levelMap[s.level] || 'Easy'}</div>
+              <div class="list-desc">${s.date} · ${Math.round((s.score / s.total) * 100)}% accuracy</div>
+            </div>
+          </div>
+        `).join('');
+      }
+    } catch (e) {
+      console.warn('Could not load dashboard stats', e);
+    }
+  }
+
+  loadDashboardStats();
 </script>
 
 </body>

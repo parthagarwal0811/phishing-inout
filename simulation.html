@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuard — Simulation</title>
+  <link rel="stylesheet" href="simulation.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ── Onboarding ── -->
+  <div class="screen" id="screen-onboard">
+    <div class="onboard-wrap">
+      <a href="index.html" class="back-link">← Dashboard</a>
+
+      <div class="onboard-hero">
+        <h1>Know your risk.<br>Before attackers do.</h1>
+        <p>We generate a personalised mixed inbox based on your role. Mark each email — safe, suspicious, or phishing. Your difficulty adapts after every session.</p>
+      </div>
+
+      <div class="form">
+
+        <!-- Returning user stats -->
+        <div id="returning-stats" style="display:none">
+          <div class="returning-header">Your progress</div>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <div class="field">
+          <label for="input-role">Your role</label>
+          <input type="text" id="input-role" placeholder="e.g. Finance Analyst, Logistics Coordinator, Legal Counsel">
+        </div>
+
+        <div class="field">
+          <label for="input-industry">Industry</label>
+          <select id="input-industry">
+            <option value="">Select industry</option>
+            <option>Finance &amp; banking</option>
+            <option>Legal</option>
+            <option>Logistics &amp; supply chain</option>
+            <option>Tech / SaaS</option>
+            <option>Government &amp; public sector</option>
+            <option>Healthcare</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="input-age">Age group</label>
+            <select id="input-age">
+              <option value="">Select</option>
+              <option>Under 25</option>
+              <option>25–40</option>
+              <option>41–60</option>
+              <option>Over 60</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="input-gender">Gender</label>
+            <select id="input-gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Non-binary</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="difficulty-badge" class="difficulty-badge level-1" style="margin-bottom:16px"></div>
+
+        <p id="form-error" class="form-error" style="display:none"></p>
+
+        <button class="btn-primary" id="btn-start">Generate my simulation</button>
+        <p class="disclaimer">Your profile is stored locally on your device only. Nothing is sent to any third party.</p>
+
+        <button class="btn-ghost" id="btn-reset-progress">Reset my progress</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Loading ── -->
+  <div class="screen hidden" id="screen-loading">
+    <div class="loading-wrap">
+      <div class="spinner"></div>
+      <p class="loading-text" id="loading-main">Building your personalised inbox...</p>
+      <p class="loading-sub" id="loading-sub">Generating realistic scenarios for your role</p>
+    </div>
+  </div>
+
+  <!-- ── Simulation ── -->
+  <div class="screen hidden" id="screen-sim">
+
+    <div class="sim-topbar">
+      <span class="sim-topbar-title">PhishGuard Simulation</span>
+      <div id="sim-level-badge" class="sim-level-badge level-1"></div>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-bar-fill" id="progress-bar-fill"></div>
+    </div>
+
+    <div class="sim-layout">
+      <div class="inbox-panel">
+        <div class="inbox-header">
+          <span class="inbox-title">Inbox</span>
+          <span class="inbox-count" id="inbox-count">10 messages</span>
+        </div>
+        <div class="email-list" id="email-list"></div>
+      </div>
+
+      <div class="email-panel" id="email-panel">
+        <div class="email-placeholder">
+          <div class="placeholder-icon">✉</div>
+          <p>Select an email to review</p>
+          <p class="placeholder-sub">Mark each one as Safe, Suspicious, or Phishing</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-footer">
+      <span class="progress-text" id="progress-text">0 of 10 reviewed</span>
+      <button class="btn-primary" id="btn-results" disabled>See my results</button>
+    </div>
+
+  </div>
+
+  <!-- ── Results ── -->
+  <div class="screen hidden" id="screen-results">
+    <div class="results-wrap">
+
+      <div class="score-hero">
+        <div class="score-ring" id="score-ring">
+          <span id="score-number">0</span>
+          <span class="score-label">/ 10</span>
+        </div>
+        <h2 id="score-title">Your score</h2>
+        <p id="score-subtitle"></p>
+      </div>
+
+      <div id="adaptation-message" class="adaptation-message"></div>
+
+      <div id="overall-stats" class="overall-stats"></div>
+
+      <div class="breakdown-header">Email breakdown</div>
+      <div class="breakdown" id="breakdown"></div>
+
+      <div class="results-actions">
+        <button class="btn-primary" id="btn-restart" onclick="window.restart()">Try another simulation</button>
+        <a href="index.html" class="btn-ghost-link">Back to dashboard</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script type="module" src="simulation.js"></script>
+</body>
+</html>
